@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Labo_1
 {
@@ -10,26 +6,21 @@ namespace Labo_1
     {
         public short IntToShort(int value)
         {
-            short shortValue;
-
             if (value < short.MinValue || value > short.MaxValue)
             {
                 Console.WriteLine($"Error to convert {value} to short. Value is out of range.");
-                return 0; 
+                return 0;
             }
 
-            shortValue = (short)value;
-            Console.WriteLine($"{value.GetType()} -> {shortValue.GetType()}");
-
+            short shortValue = (short)value;
+            Console.WriteLine($"{value} -> {shortValue} \n{value.GetType()} -> {shortValue.GetType()}");
             return shortValue;
         }
-
 
         public long IntToLong(int value)
         {
             long longValue = value;
-            Console.WriteLine($"{value.GetType()} -> {longValue.GetType()}");
-
+            Console.WriteLine($"{value} -> {longValue} \n{value.GetType()} -> {longValue.GetType()}");
             return longValue;
         }
 
@@ -37,61 +28,55 @@ namespace Labo_1
         {
             if (value < int.MinValue || value > int.MaxValue)
             {
-                Console.WriteLine($"Error to convert {value} to int. Value is out of range.");
+                Console.WriteLine($"Error to convert {value:F3} to int. Value is out of range.");
                 return 0;
             }
-            int intValue = (int)value;
-            Console.WriteLine($"{value.GetType()} -> {intValue.GetType()}");
 
+            int intValue = (int)value;
+            Console.WriteLine($"{value:F2} -> {intValue} \n{value.GetType()} -> {intValue.GetType()}");
             return intValue;
         }
 
         public float IntToFloat(int value)
         {
-            float floatValue = (float)value;
-            Console.WriteLine($"{value.GetType()} -> {floatValue.GetType()}");
+            float floatValue = value;
+            Console.WriteLine($"{value} -> {floatValue:F2} \n{value.GetType()} -> {floatValue.GetType()}");
             return floatValue;
         }
 
         public double IntToDouble(int value)
         {
             double doubleValue = value;
-            Console.WriteLine($"{value.GetType()} -> {doubleValue.GetType()}");
-
+            Console.WriteLine($"{value} -> {doubleValue:F3} \n{value.GetType()} -> {doubleValue.GetType()}");
             return doubleValue;
         }
-        
+
         public string BoolToString(bool value)
         {
-            var str = value.ToString();
-            Console.WriteLine($"{value.GetType()} -> {str.GetType()}");
-
-            return str;
+            string strValue = value.ToString();
+            Console.WriteLine($"{value} -> {strValue} \n{value.GetType()} -> {strValue.GetType()}");
+            return strValue;
         }
-        
+
         public string IntToString(int value)
         {
-            string str = value.ToString();
-            Console.WriteLine($"{value.GetType()} -> {str.GetType()}");
-
-            return value.ToString();
+            string strValue = value.ToString();
+            Console.WriteLine($"{value} -> {strValue} \n{value.GetType()} -> {strValue.GetType()}");
+            return strValue;
         }
 
         public object DateTimeToObject(DateTime value)
         {
             object boxedValue = value;
-            Console.WriteLine($"Boxing (DateTime a object): DateTime -> object");
+            Console.WriteLine($"Boxing (DateTime to object): {value} -> {boxedValue} \nDateTime -> object");
             return boxedValue;
         }
 
         public DateTime ObjectToDateTime(object value)
         {
             DateTime unboxedValue = (DateTime)value;
-            Console.WriteLine($"Unboxing (object a DateTime): object -> DateTime");
+            Console.WriteLine($"Unboxing (object to DateTime): {value} -> {unboxedValue} \nobject -> DateTime");
             return unboxedValue;
         }
-
-
-
     }
 }
